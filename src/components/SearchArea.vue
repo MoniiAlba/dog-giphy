@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data: () => {
         return {
@@ -27,16 +28,9 @@ export default {
             this.showLoading = true
             console.log(this.searchGif)
             let results = ''
-            this.$http.get('api.giphy.com/v1/gifs/search',{
-                api_key: process.env.searchGif,
-                q: this.searchGif
-            }).then(response => {
-                results = response
-            }, error => {
-                console.log(error)
-            })
-            console.log(results)
-            this.showLoading =false
+            this.$store.dispatch('getGiphs', this.searchGif).then(resp => console.log(resp))
+            
+            
         }
     }
     

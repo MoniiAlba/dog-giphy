@@ -27,8 +27,13 @@ export default {
             this.showLoading = true
             console.log(this.searchGif)
             let results = ''
-            axios.get('api.giphy.com/v1/gifs/search' + process.env.searchGif).then(response => {
+            this.$http.get('api.giphy.com/v1/gifs/search',{
+                api_key: process.env.searchGif,
+                q: this.searchGif
+            }).then(response => {
                 results = response
+            }, error => {
+                console.log(error)
             })
             console.log(results)
             this.showLoading =false

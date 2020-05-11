@@ -28,6 +28,9 @@ export default {
             console.log(this.searchGif)
             this.$store.dispatch('searchGiphs', this.searchGif)
         }
+    },
+    created() {
+        this.$store.dispatch('searchGiphs', this.searchGif)
     }    
 }
 </script>

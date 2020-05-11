@@ -3,7 +3,7 @@
         <div class="navbar">
             <v-icon color="white">fas fa-paw</v-icon>
             <div class="navbar-title">
-                Giph Finder
+                Gif Finder
             </div>
             <v-icon color="white">fas fa-paw</v-icon>
         </div>

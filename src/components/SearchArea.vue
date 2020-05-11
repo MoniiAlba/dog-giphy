@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
     data: () => {
         return {
@@ -27,13 +26,9 @@ export default {
         search() {
             this.showLoading = true
             console.log(this.searchGif)
-            let results = ''
-            this.$store.dispatch('getGiphs', this.searchGif).then(resp => console.log(resp))
-            
-            
+            this.$store.dispatch('searchGiphs', this.searchGif)
         }
-    }
-    
+    }    
 }
 </script>
 
@@ -43,6 +38,12 @@ export default {
   }
 
   .search-bar{
-      width: 25%;
+      width: 50%;
+  }
+
+  @media (max-width: 768px) {
+    .search-bar{
+        width: 100%;
+    }
   }
 </style>
